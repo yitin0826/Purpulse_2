@@ -91,12 +91,6 @@ public class RecordWeek extends Fragment {
         lineChart = view.findViewById(R.id.lineChart);
         btn_week.setOnClickListener(lis);
         setWeek();
-
-        //無數據時顯示
-        lineChart.setNoDataText("無獲取數據");
-        lineChart.setNoDataTextColor(Color.parseColor("#1b75bb"));
-
-
         return view;
     }
 
@@ -157,6 +151,9 @@ public class RecordWeek extends Fragment {
             D.moveToNext();     //下一筆資料
         }
         //折線圖
+        //無數據時顯示
+        lineChart.setNoDataText("無獲取數據");
+        lineChart.setNoDataTextColor(Color.parseColor("#1b75bb"));
         //初始化顯示
         List<Integer> heartList = new ArrayList<>();
         for(int i=Heart.size()-1; i>(-1); i--){
@@ -174,6 +171,7 @@ public class RecordWeek extends Fragment {
         //不顯示點的具體數值
         lineData.setDrawValues(false);
         lineChart.setData(lineData);
+        lineChart.invalidate();
     }
 
     /** 週數選擇的PopupWindow **/
