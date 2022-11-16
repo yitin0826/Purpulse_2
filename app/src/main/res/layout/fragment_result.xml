@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".result.ResultFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="以下為您的測量結果："
+        android:textColor="@color/blue"
+        android:textSize="@dimen/sp_15"
+        android:fontFamily="@font/jf_openhuninn"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20">
+
+        <ImageView
+            android:id="@+id/img_circle"
+            android:layout_width="@dimen/dp_170"
+            android:layout_height="@dimen/dp_170"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/circle_green"/>
+
+        <TextView
+            android:id="@+id/txt_heartrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="79"
+            android:textSize="@dimen/sp_86"
+            android:textColor="@color/white"
+            android:fontFamily="@font/kookminchejo"/>
+
+        <ImageButton
+            android:id="@+id/btn_info"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_toRightOf="@+id/img_circle"
+            android:layout_alignBottom="@+id/img_circle"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@null"
+            android:background="@null"
+            app:srcCompat="@drawable/info"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/divider"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_result"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_5"
+        app:tabGravity="fill"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_result"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_270"
+        android:paddingTop="@dimen/dp_10"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_restart"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/dp_10"
+            android:backgroundTint="@null"
+            android:background="@drawable/buttonborder2"
+            android:text="重新量測"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:fontFamily="@font/jf_openhuninn"/>
+
+        <Space
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_sure"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:backgroundTint="@null"
+            android:background="@drawable/buttonborder2"
+            android:text="確認"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:fontFamily="@font/jf_openhuninn"/>
+
+    </LinearLayout>
+
+</LinearLayout>

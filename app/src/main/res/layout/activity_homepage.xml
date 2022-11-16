@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/hp_drawerlayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomepageActivity"
+        android:orientation="vertical"
+        android:background="@drawable/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/dp_12"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_70"
+                android:layout_weight="2"
+                app:srcCompat="@mipmap/logo_horizontal" />
+
+            <ImageButton
+                android:id="@+id/hp_img"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:backgroundTint="@null"
+                android:background="@null"
+                app:srcCompat="@drawable/account_circle_svgrepo_com"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/device"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_500"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_45"
+            android:layout_marginRight="@dimen/dp_45"/>
+
+        <TextView
+            android:id="@+id/txt_btstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="藍芽未開啟"
+            android:textSize="@dimen/sp_15"
+            android:fontFamily="@font/jf_openhuninn"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/btn_btsearch"
+                android:layout_width="@dimen/dp_110"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@null"
+                android:background="@drawable/buttonborder2"
+                android:text="搜尋裝置"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                android:fontFamily="@font/jf_openhuninn"/>
+
+            <Button
+                android:id="@+id/btn_btstop"
+                android:layout_width="@dimen/dp_110"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@null"
+                android:background="@drawable/buttonborder2"
+                android:visibility="invisible"
+                android:text="停止搜尋"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                android:fontFamily="@font/jf_openhuninn"/>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/hp_navigation"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer"
+        app:headerLayout="@layout/navigation_header"
+        app:itemIconSize="@dimen/dp_40"
+        app:itemVerticalPadding="@dimen/dp_20"
+        app:itemHorizontalPadding="@dimen/dp_20"
+        android:theme="@style/myNavigationDrawerStyle"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

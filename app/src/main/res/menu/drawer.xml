@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action_profile"
+            android:icon="@drawable/social_media"
+            android:title="會員資料"/>
+
+        <item
+            android:id="@+id/action_record"
+            android:icon="@drawable/notes"
+            android:title="量測記錄" />
+
+        <item
+            android:id="@+id/action_device"
+            android:icon="@drawable/bluetooth"
+            android:title="裝置連接" />
+
+        <item
+            android:id="@+id/action_pulse"
+            android:icon="@drawable/pulse"
+            android:title="心跳量測" />
+
+        <item
+            android:id="@+id/action_notify"
+            android:icon="@drawable/reminder"
+            android:title="定時通知" />
+    </group>
+
+</menu>

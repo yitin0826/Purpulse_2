@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="status_array">
+        <item>睡覺前</item>
+        <item>工作前</item>
+        <item>工作中</item>
+        <item>工作後</item>
+        <item>其他</item>
+    </string-array>
+</resources>

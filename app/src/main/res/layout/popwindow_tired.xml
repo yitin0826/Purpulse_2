@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/infowindowshape">
+
+    <TextView
+        android:id="@+id/txt_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginStart="@dimen/dp_10"
+        android:text="憂鬱指數良好："
+        android:textSize="@dimen/sp_20"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/jf_openhuninn" />
+
+    <TextView
+        android:id="@+id/txt_suggest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_50"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:text="你的情緒狀況很穩定，請繼續保持！"
+        android:textSize="@dimen/sp_16"
+        android:textColor="@color/blue"
+        android:lineSpacingExtra="@dimen/dp_5"
+        android:fontFamily="@font/jf_openhuninn" />
+
+</LinearLayout>

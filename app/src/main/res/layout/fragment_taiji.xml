@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".result.TaijiFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="說明"
+        android:textSize="@dimen/sp_20"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/jf_openhuninn" />
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/txt_taiji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:text="@string/taiji"
+        android:textSize="@dimen/sp_17"
+        android:textColor="@color/black"
+        android:lineSpacingExtra="@dimen/dp_10"
+        android:fontFamily="@font/jf_openhuninn" />
+
+    <Button
+        android:id="@+id/btn_taiji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:minWidth="@dimen/dp_0"
+        android:backgroundTint="@null"
+        android:background="@null"
+        android:text="→點擊查看結果"
+        android:textColor="@color/blue"
+        android:fontFamily="@font/jf_openhuninn"/>
+
+</LinearLayout>

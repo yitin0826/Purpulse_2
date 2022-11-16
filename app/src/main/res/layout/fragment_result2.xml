@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".result.ResultFragment2"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/tired_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            app:srcCompat="@mipmap/happyin"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@null"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_49"
+            android:text="疲勞指數"
+            android:textSize="@dimen/sp_18"
+            android:fontFamily="@font/jf_openhuninn"/>
+
+        <ImageButton
+            android:id="@+id/btn_down1"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignRight="@+id/tired_img"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_49"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:srcCompat="@drawable/down"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@null"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_160">
+
+        <ImageView
+            android:id="@+id/sad_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginStart="@dimen/dp_15"
+            android:layout_marginEnd="@dimen/dp_15"
+            app:srcCompat="@mipmap/sadin"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@null"
+            android:background="@null"/>
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_49"
+            android:text="憂鬱指數"
+            android:textSize="@dimen/sp_18"
+            android:fontFamily="@font/jf_openhuninn"/>
+
+        <ImageButton
+            android:id="@+id/btn_down2"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignRight="@+id/sad_img"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_49"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:srcCompat="@drawable/down"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@null"
+            android:background="@null"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_200"
+        android:orientation="horizontal">
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_restart"-->
+<!--            android:layout_width="@dimen/dp_110"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginStart="@dimen/dp_10"-->
+<!--            android:backgroundTint="@null"-->
+<!--            android:background="@drawable/buttonborder2"-->
+<!--            android:text="重新量測"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/sp_20"-->
+<!--            android:fontFamily="@font/jf_openhuninn"/>-->
+
+<!--        <Space-->
+<!--            android:layout_width="@dimen/dp_40"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_sure"-->
+<!--            android:layout_width="@dimen/dp_110"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginEnd="@dimen/dp_10"-->
+<!--            android:backgroundTint="@null"-->
+<!--            android:background="@drawable/buttonborder2"-->
+<!--            android:text="確認"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/sp_20"-->
+<!--            android:fontFamily="@font/jf_openhuninn"/>-->
+
+    </LinearLayout>
+
+</LinearLayout>

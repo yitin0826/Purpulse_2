@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/notify_drawerlayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".NotifyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomepageActivity"
+        android:orientation="vertical"
+        android:background="@drawable/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/dp_12"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_70"
+                android:layout_weight="2"
+                app:srcCompat="@mipmap/logo_horizontal" />
+
+            <ImageButton
+                android:id="@+id/notify_img"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:backgroundTint="@null"
+                android:background="@null"
+                app:srcCompat="@drawable/account_circle_svgrepo_com"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_55"
+            android:layout_marginEnd="@dimen/dp_45"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="通知設定"
+                android:textSize="@dimen/sp_20"
+                android:textColor="@color/dark_gray"
+                android:fontFamily="@font/jf_openhuninn"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"/>
+
+            <ImageButton
+                android:id="@+id/btn_alarmadd"
+                android:layout_width="@dimen/dp_25"
+                android:layout_height="@dimen/dp_25"
+                android:layout_weight="0.2"
+                android:scaleType="fitCenter"
+                android:backgroundTint="@null"
+                android:background="@null"
+                app:srcCompat="@drawable/plus"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/divider"/>
+
+        <ListView
+            android:id="@+id/list_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_60"
+            android:layout_marginEnd="@dimen/dp_60"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/notify_navigation"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer"
+        app:headerLayout="@layout/navigation_header"
+        app:itemIconSize="@dimen/dp_40"
+        app:itemVerticalPadding="@dimen/dp_20"
+        app:itemHorizontalPadding="@dimen/dp_20"
+        android:theme="@style/myNavigationDrawerStyle"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

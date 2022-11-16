@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/pf_drawerlayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".profile.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/dp_12"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_70"
+                android:layout_weight="2"
+                app:srcCompat="@mipmap/logo_horizontal" />
+
+            <ImageButton
+                android:id="@+id/pf_img"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@null"
+                app:srcCompat="@drawable/account_circle_svgrepo_com" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativ_profile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_640"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_45"
+            android:layout_marginEnd="@dimen/dp_45"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/pf_navigation"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer"
+        app:headerLayout="@layout/navigation_header"
+        app:itemIconSize="@dimen/dp_40"
+        app:itemVerticalPadding="@dimen/dp_20"
+        app:itemHorizontalPadding="@dimen/dp_20"
+        android:theme="@style/myNavigationDrawerStyle"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

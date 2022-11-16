@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/infowindowshape"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="說明"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/blue"
+            android:fontFamily="@font/jf_openhuninn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/dp_10"
+            android:text="此項判斷在靜態量測時最為準確"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@color/dark_gray"
+            android:fontFamily="@font/jf_openhuninn" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativ_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginStart="@dimen/dp_20">
+
+        <TextView
+            android:id="@+id/text_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="顏色為綠色："
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/explain_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/text_g"
+            android:text="偶有壓力感"
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/text_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_below="@+id/text_g"
+            android:text="顏色為黃色："
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/explain_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_below="@+id/explain_g"
+            android:layout_toRightOf="@id/text_y"
+            android:text="有心理壓力的感覺"
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/text_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_below="@+id/text_y"
+            android:text="顏色為紅色："
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/explain_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_below="@+id/explain_y"
+            android:layout_toRightOf="@id/text_r"
+            android:text="有明顯身心症狀"
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/text_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_below="@+id/text_r"
+            android:text="顏色為紫色："
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/explain_p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:layout_below="@+id/explain_r"
+            android:layout_toRightOf="@id/text_p"
+            android:text="容易情緒失調、失控"
+            android:textSize="@dimen/sp_17"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/black"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:background="@drawable/buttonborder2"
+        android:text="確認"
+        android:textSize="@dimen/sp_15"
+        android:textColor="@color/white"
+        android:fontFamily="@font/jf_openhuninn"/>
+
+</LinearLayout>

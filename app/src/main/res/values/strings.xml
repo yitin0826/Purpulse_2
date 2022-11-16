@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">purpulse</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="abdomen">使用前，請先確認電極接頭與貼片是否扣好，再將電極貼片底紙撕開，將綠色部分貼到右腹部，如上圖所示。</string>
+    <string name="lefthand">使用前，請先確認電極接頭與貼片是否扣好，再將電極貼片底紙撕開，將黃色部分貼到左手手腕內側，如上圖所示。</string>
+    <string name="righthand">使用前，請先確認電極接頭與貼片是否扣好，再將電極貼片底紙撕開，將紅色部分貼到右手手腕內側，如上圖所示。</string>
+    <string name="location_permission_title">Location permission required</string>
+    <string name="location_permission_message">This app does not use location information, but scanning for Bluetooth LE devices requires this permission</string>
+    <string name="location_denied_title">Location permission denied</string>
+    <string name="location_denied_message">As location permission has not been granted, this app cannot scan for Bluetooth LE devices.</string>
+    <string name="pairing_request">PAIRING requested\n-> Perform pairing steps. Connect again</string>
+    <string name="drawer_open">Drawer opened</string>
+    <string name="drawer_close">Drawer closed</string>
+    <string name="scatter">心電散點圖是一種將由複雜曲線組成的心電圖轉化成富有特點並更加易於識別的幾何圖形，將大數據心電現象用"圖像"的型態呈現出來，以利於判斷各項疾病的罹患機率。</string>
+    <string name="taiji">白色(陽)表交感神經， 黑色(陰)表副交感，圓圈大小表自律神經總體功能，若圓圈愈大表示自律神經功能愈強，愈小則愈弱，白色愈多表交感強，黑色較多表副交感強。</string>
+    <string name="title_activity_editprofile">EditprofileActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="rate_normal">RR間期連續性變化呈整體性，心電散點圖呈棒球拍形，沿45°線分布，任意横、縱坐標點的位置分布在600～1000ms之間，近端纖細，遠端粗大。</string>
+    <string name="tired_great">疲勞指數良好！</string>
+    <string name="tired_good">疲勞指數中等！</string>
+    <string name="tired_bad">疲勞指數嚴重！</string>
+    <string name="sad_great">憂鬱指數良好！</string>
+    <string name="sad_good">憂鬱指數中等！</string>
+    <string name="sad_bad">憂鬱指數嚴重！</string>
+    <string name="tired_great_suggest">你的身體狀況看起來很好，請繼續保持！</string>
+    <string name="tired_good_suggest">你的身體狀況還算可以，有提升的空間，或許能更有更多的休息！</string>
+    <string name="tired_bad_suggest">你的身體感受到很疲累，建議採取有助於減輕疲勞的飲食或運動 ，如果自己也認為不太對勁的話，建議到醫院尋求專業協助！</string>
+    <string name="sad_great_suggest">你的情緒狀況很穩定，請繼續保持！</string>
+    <string name="sad_good_suggest">情緒狀況稍微不穩定，不過在正常範圍內！</string>
+    <string name="sad_bad_suggest">目前身心狀況不是很好的樣子，也許目前有些事情困擾著你，如果最近感受很難過的話，建議到醫院做診斷！</string>
+</resources>

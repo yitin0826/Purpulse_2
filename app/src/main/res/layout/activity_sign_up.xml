@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/dp_20"
+    android:background="@drawable/backcolor"
+    tools:context=".SignUpActivity"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dp_16">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_80"
+            android:paddingLeft="@dimen/dp_10"
+            android:backgroundTint="@null"
+            android:background="@null"
+            app:srcCompat="@drawable/chevron_back_svgrepo_com"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_70"
+                android:layout_gravity="center"
+                app:srcCompat="@mipmap/logo_horizontal" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_35"/>
+
+    <RelativeLayout
+        android:id="@+id/relativ_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用戶名："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/edit_nickname"
+            android:layout_width="@dimen/dp_185"
+            android:layout_height="@dimen/dp_31"
+            android:layout_toRightOf="@+id/text_1"
+            android:paddingStart="@dimen/dp_5"
+            android:background="@drawable/textinputborder"
+            android:ems="8"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_15"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/txt_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_1"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_alignRight="@+id/text_1"
+            android:text="帳號："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/signup_account"
+            android:layout_width="@dimen/dp_185"
+            android:layout_height="@dimen/dp_31"
+            android:layout_below="@+id/edit_nickname"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_alignEnd="@+id/edit_nickname"
+            android:paddingStart="@dimen/dp_5"
+            android:background="@drawable/textinputborder"
+            android:ems="8"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@android:color/black"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/txt_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_2"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_alignRight="@+id/txt_2"
+            android:text="密碼："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/signup_password"
+            android:layout_width="@dimen/dp_185"
+            android:layout_height="@dimen/dp_31"
+            android:layout_below="@+id/signup_account"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_21"
+            android:layout_alignEnd="@+id/signup_account"
+            android:paddingStart="@dimen/dp_5"
+            android:background="@drawable/textinputborder"
+            android:ems="8"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@android:color/black"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_3"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_alignRight="@+id/txt_3"
+            android:text="信箱："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/edit_mail"
+            android:layout_width="@dimen/dp_185"
+            android:layout_height="@dimen/dp_31"
+            android:layout_below="@+id/signup_password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_21"
+            android:layout_alignEnd="@+id/signup_password"
+            android:paddingStart="@dimen/dp_5"
+            android:background="@drawable/textinputborder"
+            android:ems="8"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@android:color/black"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/text_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_2"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_alignRight="@+id/text_2"
+            android:text="生日："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/edit_birthday"
+            android:layout_width="@dimen/dp_185"
+            android:layout_height="@dimen/dp_31"
+            android:layout_below="@+id/edit_mail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_21"
+            android:layout_alignStart="@+id/edit_mail"
+            android:background="@drawable/textinputborder"
+            android:paddingStart="@dimen/dp_5"
+            android:inputType="none"
+            android:ems="8"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@android:color/black"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/text_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_3"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_alignRight="@+id/text_3"
+            android:text="性別："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <Spinner
+            android:id="@+id/spin_sex"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_birthday"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_21"
+            android:layout_alignStart="@+id/edit_birthday"
+            android:background="@drawable/spinnerstyle"/>
+
+        <TextView
+            android:id="@+id/text_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_4"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_alignRight="@+id/text_4"
+            android:text="身高："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/edit_height"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_31"
+            android:layout_below="@+id/spin_sex"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_21"
+            android:layout_alignStart="@+id/spin_sex"
+            android:paddingStart="@dimen/dp_5"
+            android:background="@drawable/textinputborder"
+            android:ems="8"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@android:color/black"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/text_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_5"
+            android:layout_marginTop="@dimen/dp_22"
+            android:layout_alignRight="@+id/text_5"
+            android:text="體重："
+            android:textSize="@dimen/sp_23"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/edit_weight"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_31"
+            android:layout_below="@+id/edit_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_21"
+            android:layout_alignStart="@+id/edit_height"
+            android:paddingStart="@dimen/dp_5"
+            android:background="@drawable/textinputborder"
+            android:ems="8"
+            android:textSize="@dimen/sp_15"
+            android:textColor="@android:color/black"
+            android:imeOptions="actionDone"
+            android:singleLine="true"/>
+
+    </RelativeLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"/>
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:backgroundTint="#FFFFFF"
+        android:background="@drawable/buttonborder"
+        android:text="註冊"
+        android:textColor="#1b75bb"
+        android:textSize="@dimen/sp_20"
+        android:fontFamily="@font/jf_openhuninn"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="已經擁有帳號了？"
+            android:textSize="@dimen/sp_20"
+            android:fontFamily="@font/jf_openhuninn"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/btn_gologin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="0dp"
+            android:backgroundTint="@null"
+            android:background="@null"
+            android:text="馬上登入"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:fontFamily="@font/jf_openhuninn"/>
+
+    </LinearLayout>
+
+</LinearLayout>
