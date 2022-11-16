@@ -170,6 +170,7 @@ public class RecordWeek extends Fragment {
         LineData lineData = new LineData(lineDataSet);
         //不顯示點的具體數值
         lineData.setDrawValues(false);
+        lineDataSet.setColor(Color.parseColor("#1B75bb"));
         lineChart.setData(lineData);
         lineChart.invalidate();
     }
