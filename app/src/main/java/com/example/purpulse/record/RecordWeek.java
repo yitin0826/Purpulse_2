@@ -2,6 +2,7 @@ package com.example.purpulse.record;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,13 +17,11 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.purpulse.Note;
 import com.example.purpulse.R;
@@ -31,9 +30,10 @@ import com.example.purpulse.result.ResultPagerAdapter;
 import com.example.purpulse.result.ScatterFragment;
 import com.example.purpulse.result.TaijiFragment;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.google.android.material.tabs.TabLayout;
-
-import org.angmarch.views.NiceSpinner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -41,7 +41,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 public class RecordWeek extends Fragment {
@@ -94,8 +93,30 @@ public class RecordWeek extends Fragment {
         return view;
     }
 
+//    /** 折線圖設置 **/
+//    public void setLineChart(){
+//        //無數據時顯示
+//        lineChart.setNoDataText("無獲取數據");
+//        lineChart.setNoDataTextColor(Color.parseColor("#1b75bb"));
+//        //初始化顯示
+//        List<Float> floats = new ArrayList<>();
+//        floats.add(0.5f);
+//        floats.add(3f);
+//        floats.add(1f);
+//        floats.add(0.1f);
+//        List<Entry> entries = new ArrayList<>();
+//        for (int i = 0;i<floats.size();i++){
+//            entries.add(new Entry(i,floats.get(i)));
+//        }
+//        //将数据赋给数据集,一个数据集表示一条线
+//        LineDataSet lineDataSet = new LineDataSet(entries,"");
+//        LineData lineData = new LineData(lineDataSet);
+//        //不显示曲线点的具体数值
+//        lineData.setDrawValues(false);
+//        lineChart.setData(lineData);
+//    }
+
     public void initRecycler() throws ParseException {
-        int year = np_year.getValue();
         int month = np_month.getValue();
         int week = np_week.getValue();
         // 建立SQLiteOpenHelper物件
@@ -122,6 +143,24 @@ public class RecordWeek extends Fragment {
             }
             D.moveToNext();     //下一筆資料
         }
+        //無數據時顯示
+        lineChart.setNoDataText("無獲取數據");
+        lineChart.setNoDataTextColor(Color.parseColor("#1b75bb"));
+        //初始化顯示
+        List<Integer> heartList = new ArrayList<>();
+        for(int i=0; i<Heart.size(); i++){
+            heartList.add(Integer.parseInt(Heart.get(i)));
+        }
+        List<Entry> entries = new ArrayList<>();
+        for (int i = 0;i<heartList.size();i++){
+            entries.add(new Entry(i,heartList.get(i)));
+        }
+        //將數據放入DataSet,一個數據列表示一條線
+        LineDataSet lineDataSet = new LineDataSet(entries,"");
+        LineData lineData = new LineData(lineDataSet);
+        //不顯示點的具體數值
+        lineData.setDrawValues(false);
+        lineChart.setData(lineData);
     }
 
     /** 週數選擇的PopupWindow **/
@@ -259,7 +298,7 @@ public class RecordWeek extends Fragment {
             }else if (Integer.parseInt(heart)>=90 && Integer.parseInt(heart)<100){
                 holder.img_circle.setImageResource(R.drawable.circle_red);
             }else if (Integer.parseInt(heart)>=100){
-                holder.img_circle.setImageResource(R.drawable.circle_puple);
+                holder.img_circle.setImageResource(R.drawable.circle_purple);
             }
         }
 

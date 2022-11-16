@@ -173,7 +173,7 @@ public class RecordDay extends Fragment {
             }else if (Integer.parseInt(heart)>=90 && Integer.parseInt(heart)<100){
                 holder.img_circle.setImageResource(R.drawable.circle_red);
             }else if (Integer.parseInt(heart)>=100){
-                holder.img_circle.setImageResource(R.drawable.circle_puple);
+                holder.img_circle.setImageResource(R.drawable.circle_purple);
             }
         }
 
