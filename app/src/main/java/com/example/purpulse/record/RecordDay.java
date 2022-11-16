@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -106,18 +107,19 @@ public class RecordDay extends Fragment {
 
         class ViewHolder extends RecyclerView.ViewHolder{
             private TextView item_heartrate,item_status,item_date;
+            private ImageView img_circle;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 item_heartrate = itemView.findViewById(R.id.item_heartrate);
                 item_status = itemView.findViewById(R.id.item_status);
                 item_date = itemView.findViewById(R.id.item_date);
+                img_circle = itemView.findViewById(R.id.img_circle);
                 popRecord();
 
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         Note.Date = item_date.getText().toString();
                         Log.d("date",""+Note.Date);
 
@@ -163,6 +165,16 @@ public class RecordDay extends Fragment {
             holder.item_heartrate.setText(Heart.get(position));
             holder.item_status.setText(state.get(position));
             holder.item_date.setText(Date.get(position));
+            String heart = Heart.get(position);
+            if(Integer.parseInt(heart)<80){
+                holder.img_circle.setImageResource(R.drawable.circle_green);
+            }else if (Integer.parseInt(heart)>=80 && Integer.parseInt(heart)<90){
+                holder.img_circle.setImageResource(R.drawable.circle_yellow);
+            }else if (Integer.parseInt(heart)>=90 && Integer.parseInt(heart)<100){
+                holder.img_circle.setImageResource(R.drawable.circle_red);
+            }else if (Integer.parseInt(heart)>=100){
+                holder.img_circle.setImageResource(R.drawable.circle_puple);
+            }
         }
 
         @Override

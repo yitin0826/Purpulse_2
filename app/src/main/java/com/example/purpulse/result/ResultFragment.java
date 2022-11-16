@@ -167,11 +167,11 @@ public class ResultFragment extends Fragment{
         txt_heartrate.setText(D.getString(13));
         if (heartrate<80) {
             img_circle.setImageResource(R.drawable.circle_green);
-        }else if (80<heartrate && heartrate<90){
+        }else if (80<=heartrate && heartrate<90){
             img_circle.setImageResource(R.drawable.circle_yellow);
-        }else if (90<heartrate && heartrate<100){
+        }else if (90<=heartrate && heartrate<100){
             img_circle.setImageResource(R.drawable.circle_red);
-        }else if (heartrate>100){
+        }else if (heartrate>=100){
             img_circle.setImageResource(R.drawable.circle_puple);
         }
         SpannableStringBuilder span = new SpannableStringBuilder(txt_heartrate.getText().toString());
