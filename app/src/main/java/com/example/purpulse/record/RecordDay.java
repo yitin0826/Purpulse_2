@@ -129,16 +129,16 @@ public class RecordDay extends Fragment {
                         Cursor D = DB.rawQuery("SELECT * FROM Data WHERE time LIKE '"+Note.Date+"'",null);
                         D.moveToFirst();
                         //點擊歷史紀錄顯示的值
-                        txt_lf.setText(D.getString(6));
-                        txt_hf.setText(D.getString(7));
+                        txt_lf.setText(D.getString(7).substring(0,6));;
+                        txt_hf.setText(D.getString(8).substring(0,6));
                         txt_sdnn.setText(D.getString(5));
                         //太極圖數據
-                        Note.HFn = D.getDouble(7);
-                        Note.LFn = D.getDouble(6);
-                        Note.sdNN = D.getDouble(4);
+                        Note.HFn = D.getDouble(8);
+                        Note.LFn = D.getDouble(7);
+                        Note.sdNN = D.getDouble(5);
                         //散點圖數據
                         Note.RRi.clear();   //先清空怕資料重疊
-                        String test = D.getString(9).replaceAll(" ","");    //取得數據以及清除當中的空格
+                        String test = D.getString(10).replaceAll(" ","");    //取得數據以及清除當中的空格
                         Log.d("test",""+test);
                         String[] sqlrri = test.split("\\[|,|\\]",0);    //去除括弧和逗號
                         Log.d("sqlrri",""+ Arrays.toString(sqlrri));
