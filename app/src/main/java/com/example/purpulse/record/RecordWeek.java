@@ -91,6 +91,12 @@ public class RecordWeek extends Fragment {
         lineChart = view.findViewById(R.id.lineChart);
         btn_week.setOnClickListener(lis);
         setWeek();
+
+        //無數據時顯示
+        lineChart.setNoDataText("無獲取數據");
+        lineChart.setNoDataTextColor(Color.parseColor("#1b75bb"));
+
+
         return view;
     }
 
@@ -118,8 +124,12 @@ public class RecordWeek extends Fragment {
 //    }
 
     public void initRecycler() throws ParseException {
+        int year = np_year.getValue();
         int month = np_month.getValue();
         int week = np_week.getValue();
+        Heart.clear();
+        Date.clear();
+        state.clear();
         // 建立SQLiteOpenHelper物件
         sqlDataBaseHelper = new SqlDataBaseHelper(getActivity(),DataBaseName,null,DataBaseVersion,DataBaseTable);
         DB = sqlDataBaseHelper.getWritableDatabase(); // 開啟資料庫
@@ -137,25 +147,27 @@ public class RecordWeek extends Fragment {
             Date date = df.parse(D.getString(1));
             SimpleDateFormat mon = new SimpleDateFormat("M");
             int Mon = Integer.valueOf(mon.format(date));      //月
-            if (Mon == month && week == D.getInt(2)){
+            SimpleDateFormat yea = new SimpleDateFormat("yyyy");
+            int Yea = Integer.valueOf(yea.format(date));      //年
+            if (Mon == month && week == D.getInt(2 ) && year == Yea){
                 Heart.add(D.getString(9));
                 Date.add(D.getString(1));
                 state.add(D.getString(3));
             }
             D.moveToNext();     //下一筆資料
         }
-        //無數據時顯示
-        lineChart.setNoDataText("無獲取數據");
-        lineChart.setNoDataTextColor(Color.parseColor("#1b75bb"));
+        //折線圖
         //初始化顯示
         List<Integer> heartList = new ArrayList<>();
-        for(int i=0; i<Heart.size(); i++){
+        for(int i=Heart.size()-1; i>(-1); i--){
             heartList.add(Integer.parseInt(Heart.get(i)));
         }
+        Log.d("heartlist",""+heartList);
         List<Entry> entries = new ArrayList<>();
         for (int i = 0;i<heartList.size();i++){
             entries.add(new Entry(i,heartList.get(i)));
         }
+        Log.d("entirs",""+entries);
         //將數據放入DataSet,一個數據列表示一條線
         LineDataSet lineDataSet = new LineDataSet(entries,"");
         LineData lineData = new LineData(lineDataSet);
@@ -255,16 +267,16 @@ public class RecordWeek extends Fragment {
                         Cursor D = DB.rawQuery("SELECT * FROM Data WHERE time LIKE '"+Note.Date+"'",null);
                         D.moveToFirst();
                         //點擊歷史紀錄顯示的值，取到小數後4位
-                        txt_lf.setText(D.getString(6).substring(0,6));
-                        txt_hf.setText(D.getString(7).substring(0,6));
-                        txt_sdnn.setText(D.getString(5).substring(0,6));
+                        txt_lf.setText(D.getString(7).substring(0,6));
+                        txt_hf.setText(D.getString(8).substring(0,6));
+                        txt_sdnn.setText(D.getString(5));
                         //太極圖數據
-                        Note.HFn = D.getDouble(7);
-                        Note.LFn = D.getDouble(6);
-                        Note.sdNN = D.getDouble(4);
+                        Note.HFn = D.getDouble(8);
+                        Note.LFn = D.getDouble(7);
+                        Note.sdNN = D.getDouble(5);
                         //散點圖數據
                         Note.RRi.clear();   //先清空怕資料重疊
-                        String test = D.getString(9).replaceAll(" ","");    //取得數據以及清除當中的空格
+                        String test = D.getString(10).replaceAll(" ","");    //取得數據以及清除當中的空格
                         Log.d("test",""+test);
                         String[] sqlrri = test.split("\\[|,|\\]",0);    //去除括弧和逗號
                         Log.d("sqlrri",""+ Arrays.toString(sqlrri));
