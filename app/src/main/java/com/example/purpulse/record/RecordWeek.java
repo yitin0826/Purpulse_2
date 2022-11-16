@@ -88,6 +88,7 @@ public class RecordWeek extends Fragment {
         view = inflater.inflate(R.layout.fragment_record_week, container, false);
         btn_week = view.findViewById(R.id.btn_week);
         txt_getweek = view.findViewById(R.id.txt_getweek);
+        lineChart = view.findViewById(R.id.lineChart);
         btn_week.setOnClickListener(lis);
         setWeek();
         return view;
