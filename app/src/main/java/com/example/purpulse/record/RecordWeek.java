@@ -30,9 +30,12 @@ import com.example.purpulse.result.ResultPagerAdapter;
 import com.example.purpulse.result.ScatterFragment;
 import com.example.purpulse.result.TaijiFragment;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.google.android.material.tabs.TabLayout;
 
 import java.text.ParseException;
@@ -62,6 +65,7 @@ public class RecordWeek extends Fragment {
     ArrayList<String> Heart = new ArrayList<>();
     ArrayList<String> Date = new ArrayList<>();
     ArrayList<String> state = new ArrayList<>();
+    ArrayList<String> Day = new ArrayList<>();
     /** itemClick **/
     private PopupWindow record;
     private TextView txt_lf,txt_sdnn,txt_hf;
@@ -94,28 +98,6 @@ public class RecordWeek extends Fragment {
         return view;
     }
 
-//    /** 折線圖設置 **/
-//    public void setLineChart(){
-//        //無數據時顯示
-//        lineChart.setNoDataText("無獲取數據");
-//        lineChart.setNoDataTextColor(Color.parseColor("#1b75bb"));
-//        //初始化顯示
-//        List<Float> floats = new ArrayList<>();
-//        floats.add(0.5f);
-//        floats.add(3f);
-//        floats.add(1f);
-//        floats.add(0.1f);
-//        List<Entry> entries = new ArrayList<>();
-//        for (int i = 0;i<floats.size();i++){
-//            entries.add(new Entry(i,floats.get(i)));
-//        }
-//        //将数据赋给数据集,一个数据集表示一条线
-//        LineDataSet lineDataSet = new LineDataSet(entries,"");
-//        LineData lineData = new LineData(lineDataSet);
-//        //不显示曲线点的具体数值
-//        lineData.setDrawValues(false);
-//        lineChart.setData(lineData);
-//    }
 
     public void initRecycler() throws ParseException {
         int year = np_year.getValue();
@@ -143,11 +125,15 @@ public class RecordWeek extends Fragment {
             int Mon = Integer.valueOf(mon.format(date));      //月
             SimpleDateFormat yea = new SimpleDateFormat("yyyy");
             int Yea = Integer.valueOf(yea.format(date));      //年
-            if (Mon == month && week == D.getInt(2 ) && year == Yea){
+            if (Mon == month && week == D.getInt(2) && year == Yea){
+                SimpleDateFormat day = new SimpleDateFormat("E");
+                String Days = day.format(date);      //星期幾
                 Heart.add(D.getString(9));
                 Date.add(D.getString(1));
                 state.add(D.getString(3));
+                Day.add(Days);
             }
+            Log.d("Day",""+Day);
             D.moveToNext();     //下一筆資料
         }
         //折線圖
@@ -170,7 +156,20 @@ public class RecordWeek extends Fragment {
         LineData lineData = new LineData(lineDataSet);
         //不顯示點的具體數值
         lineData.setDrawValues(false);
-        lineDataSet.setColor(Color.parseColor("#1B75bb"));
+        lineDataSet.setColor(Color.parseColor("#1B75bb"));      //顏色
+        lineDataSet.setCircleColor(Color.parseColor("#1B75bb"));
+        //X轴、Y軸樣式設計
+        XAxis xAxis = lineChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(Day));
+        xAxis.setLabelCount(Day.size());    //X軸標籤個數
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setTextSize(12f);
+        YAxis rightYAxis = lineChart.getAxisRight();
+        rightYAxis.setEnabled(false);
+        //優化圖表
+        lineChart.getLegend().setEnabled(false);
+        lineChart.setHighlightPerDragEnabled(false);
+        lineChart.getDescription().setEnabled(false);
         lineChart.setData(lineData);
         lineChart.invalidate();
     }
