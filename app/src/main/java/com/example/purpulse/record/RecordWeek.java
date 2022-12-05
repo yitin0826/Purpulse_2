@@ -128,7 +128,14 @@ public class RecordWeek extends Fragment {
             if (Mon == month && week == D.getInt(2) && year == Yea){
                 SimpleDateFormat day = new SimpleDateFormat("E");
                 String Days = day.format(date);      //星期幾
-                Heart.add(D.getString(9));
+                int j = Integer.parseInt(D.getString(9));
+                if (j<80){
+                    Heart.add("80");
+                }else if (j > 100){
+                    Heart.add("100");
+                }else {
+                    Heart.add(D.getString(9));
+                }
                 Date.add(D.getString(1));
                 state.add(D.getString(3));
                 Day.add(Days);
@@ -156,14 +163,15 @@ public class RecordWeek extends Fragment {
         LineData lineData = new LineData(lineDataSet);
         //不顯示點的具體數值
         lineData.setDrawValues(false);
-        lineDataSet.setColor(Color.parseColor("#1B75bb"));      //顏色
+        //顏色
+        lineDataSet.setColor(Color.parseColor("#1B75bb"));
         lineDataSet.setCircleColor(Color.parseColor("#1B75bb"));
         //X轴、Y軸樣式設計
         XAxis xAxis = lineChart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(Day));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(Day));  //X軸標籤
         xAxis.setLabelCount(Day.size());    //X軸標籤個數
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setTextSize(12f);
+        xAxis.setTextSize(10f);
         YAxis rightYAxis = lineChart.getAxisRight();
         rightYAxis.setEnabled(false);
         //優化圖表

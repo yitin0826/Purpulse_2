@@ -84,7 +84,14 @@ public class RecordDay extends Fragment {
         recyclerView.setAdapter(myListAdapter);
         HashMap<String,String> hashMap = new HashMap<>();
         for (int i = 0;i<D.getCount();i++){     //按照順序顯示資料
-            Heart.add(D.getString(9));
+            int j = Integer.parseInt(D.getString(9));
+            if (j<80){
+                Heart.add("80");
+            }else if (j > 100){
+                Heart.add("100");
+            }else {
+                Heart.add(D.getString(9));
+            }
             Date.add(D.getString(1));
             state.add(D.getString(3));
             D.moveToNext();     //下一筆資料
