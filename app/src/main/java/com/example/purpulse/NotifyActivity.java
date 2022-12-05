@@ -105,14 +105,14 @@ public class NotifyActivity extends AppCompatActivity {
                 if (activity.equals("device")){
                     return true;
                 }else {
-                    startActivity(new Intent(NotifyActivity.this,ProfileActivity.class));
+                    startActivity(new Intent(NotifyActivity.this,HomepageActivity.class));
                     return true;
                 }
             }else if (id == R.id.action_pulse){
                 if (activity.equals("pulse")){
                     return true;
                 }else {
-                    startActivity(new Intent(NotifyActivity.this, ConnectionActivity.class));
+                    startActivity(new Intent(NotifyActivity.this, PulseActivity.class));
                     return true;
                 }
             }else {

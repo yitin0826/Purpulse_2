@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.example.purpulse.HomepageActivity;
 import com.example.purpulse.Note;
+import com.example.purpulse.NotifyActivity;
 import com.example.purpulse.PulseActivity;
 import com.example.purpulse.R;
 import com.example.purpulse.record.RecordActivity;
@@ -124,7 +125,7 @@ public class ProfileActivity extends AppCompatActivity implements FragmentManage
                 if (activity.equals("notify")){
                     return true;
                 }else {
-//                    startActivity(new Intent(ProfileActivity.this,ProfileActivity.class));
+                    startActivity(new Intent(ProfileActivity.this, NotifyActivity.class));
                     return true;
                 }
             }
