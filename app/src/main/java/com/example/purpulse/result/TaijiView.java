@@ -75,8 +75,8 @@ public class TaijiView extends View {
         //两个小圆
         double LF = Note.LFn;
         double HF = Note.HFn;
-        double blackcircle = LF*radius;
-        double whitecircle = HF*radius;
+        double blackcircle = HF*radius;
+        double whitecircle = LF*radius;
         int BC = (int)Math.round(blackcircle);
         int WC = (int)Math.round(whitecircle);
 //        int innerRadius = radius / 2;

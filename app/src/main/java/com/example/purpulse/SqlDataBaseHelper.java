@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class SqlDataBaseHelper extends SQLiteOpenHelper {
     private static final String DataBaseName = "db";
-    private static final int DataBaseVersion = 11;
+    private static final int DataBaseVersion = 12;
 
     public SqlDataBaseHelper(@Nullable Context context, @Nullable String name,
                              @Nullable SQLiteDatabase.CursorFactory factory, int version, String TableName) {
